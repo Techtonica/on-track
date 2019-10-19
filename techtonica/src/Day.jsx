@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFileAlt, faDesktop, faVideo } from '@fortawesome/free-solid-svg-icons'
 class Day extends React.Component {
     constructor(props) {
         super(props)
@@ -7,13 +8,21 @@ class Day extends React.Component {
 
     render() {
       const { dayData } = this.props;
-
-      let parsedDayData = Object.keys(dayData || {}).map((d) => <div><br/><p>{dayData[d]}</p></div>)
+      console.log(dayData)
+      let parsedDayData = (dayData || []).map((activity) => 
+      <div><hr/>
+        <span className="activity-item">{activity['Topic (Estimated Time)']} </span>
+        <span className="activity-item">{activity['Estimated time (hours)']} hours</span>
+        <span className="activity-item"> <a href={activity['Topic Outline']}><FontAwesomeIcon icon={faFileAlt} /></a></span>
+        <span className="activity-item"><a href={activity['Slides']}><FontAwesomeIcon icon={faDesktop}/></a> </span>
+        <span className="activity-item"><a href={activity['Video']}><FontAwesomeIcon icon={faVideo} /></a> </span>
+        <span className="activity-item">{activity['Assessment'] ? "Assessment " + activity['Assessment'] : ""} </span>
+    </div>)
+      
         return(
-
         <div style={{borderStyle: 'solid'}}> 
-            {/* <button onClick={() => this.setState({isOpen: !this.state.isOpen}).bind(this)}/> */}
-                {parsedDayData}
+            <h2> { dayData[0]['Day'] ? "Day " + dayData[0]['Day'] : "Homework" }</h2>
+            {parsedDayData}
         </div>)
     }
 }

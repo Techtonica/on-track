@@ -33,10 +33,15 @@ import './home.css';
             continue;
           } else if (!Object.keys(parsedData).includes(weekNumber)) {
             let dayNumber = rawData[i]['Day']
-            parsedData[weekNumber] = {[dayNumber]: rawData[i]}
+            parsedData[weekNumber] = {[dayNumber]: [rawData[i]]}
           } else {
             let dayNumber = rawData[i]['Day']
-            parsedData[weekNumber][dayNumber] = rawData[i]
+            if (Object.keys(parsedData[weekNumber]).includes(dayNumber)){
+              parsedData[weekNumber][dayNumber].push(rawData[i])
+            } else {
+              parsedData[weekNumber][dayNumber] = [rawData[i]];
+            }
+            
           }
       }
       return parsedData;
@@ -47,10 +52,8 @@ import './home.css';
     render() {
       let parsedData = this.parseRawData();
       return (
-        <div className="App">
-          <header className="App-header">
+        <div className="home-body">
             <h1 className="App-title">Techtonica Home Page</h1>
-          </header>
           {Object.keys(parsedData).map((weekNumber) => 
                                         <Week 
                                             weekNumber={weekNumber} 

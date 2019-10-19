@@ -7,7 +7,7 @@ const Footer = () => {
   return(
     <>
       <footer>
-        <h1>Footer</h1>
+        <a href="https://techtonica.org" target="_blank" className="foot-links">Techtonica</a>
       </footer>
     </>
   )

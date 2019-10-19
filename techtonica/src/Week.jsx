@@ -1,5 +1,7 @@
 import React from 'react';
 import Day from './Day';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 class Week extends React.Component {
     constructor(props) {
@@ -15,14 +17,11 @@ class Week extends React.Component {
 
     render() {
       const { weekNumber, daysListData } = this.props;
-      console.log(daysListData)
       let daysOfWeek = Object.keys(daysListData || {}).map((day) => <Day key={day}
                                                                          dayData={daysListData[day]}/>)
-    console.log(daysOfWeek)
       return(
       <div> 
-        <h2 style={{color: 'red'}}>Week #{weekNumber}</h2>
-        <button onClick={this.toggleDays.bind(this)}/>
+        <h2>Week #{weekNumber} <FontAwesomeIcon icon={faAngleDown} onClick={this.toggleDays.bind(this)} /></h2>
             {this.state.isOpen && daysOfWeek}
       </div>)
 
