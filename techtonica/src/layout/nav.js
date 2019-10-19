@@ -8,10 +8,12 @@ const Nav = () => {
     <>
       <nav>
         <div className="nav-left">
-          <img src="#" alt="techtonica logo"/>
+          <img src={process.env.PUBLIC_URL + '/img/techtonica_logo.png'} alt="techtonica logo" className="nav-logo"/>
         </div>
         <div className="nav-right">
-          <button className="nav-button">Login</button>
+          <button className="nav-button">
+            <a href="/studentSubmission/:topic">Login</a>
+          </button>
         </div>
       </nav>
     </>
