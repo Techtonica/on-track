@@ -1,22 +1,21 @@
 import React from 'react';
 
-  export class Week extends React.Component {
+class Day extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            isOpen: false
-        }
     }
 
     render() {
-      const { weekNumber, days } = this.props;
-      let daysOfWeek = (days).map((day) => <Day key={day.dayNumber}
-                                                day={day}/>)
-      return(
-      <div> 
-        <button onClick={() => this.setState({isOpen: !this.state.isOpen}).bind(this)}/>
-            {this.state.isOpen && daysOfWeek}
-      </div>)
+      const { dayData } = this.props;
 
+      let parsedDayData = Object.keys(dayData || {}).map((d) => <div><br/><p>{dayData[d]}</p></div>)
+        return(
+
+        <div style={{borderStyle: 'solid'}}> 
+            {/* <button onClick={() => this.setState({isOpen: !this.state.isOpen}).bind(this)}/> */}
+                {parsedDayData}
+        </div>)
     }
 }
+
+export default Day; 
