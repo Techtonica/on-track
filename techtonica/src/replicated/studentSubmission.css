@@ -7,6 +7,8 @@
 .submission-title {
   text-align: center;
   color: black;
+  margin: 0;
+  font-size: 3em;
 }
 
 .student-form {
@@ -15,35 +17,54 @@
   width: 80vw;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
 }
 
 .url {
   display: flex;
-  width: 80vw;
+  flex-direction: column;
+  width: 40vw;
 }
 
-.healpful {
+.url-input {
+  height:5vh;
+  width: 40vw;
+}
+
+.helpful {
   display: flex;
-  width: 80vw;
+  flex-direction: column;
+  width: 40vw;
 }
 
 .time {
   display: flex;
-  width: 80vw;
+  flex-direction: column;
+  width: 40vw;
 }
 
 .difficulty {
   display: flex;
-  width: 80vw;
+  flex-direction: column;
+  width: 40vw;
 }
 
 .feedback {
   display: flex;
-  width: 80vw;
+  flex-direction: column;
+  width: 40vw;
 }
 
-p {
-  color: black;
-  font-size: 5em;
+.feedback-input {
+  height: 20vh;
+  width: 40vw;
+}
+
+label {
+  margin: 0 1vw 0 0;
+}
+
+.button-input {
+  margin: 2vh;
+  height: 5vh;
+  width: 10vw;
 }
