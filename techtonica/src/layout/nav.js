@@ -8,7 +8,9 @@ const Nav = () => {
     <>
       <nav>
         <div className="nav-left">
-          <img src={process.env.PUBLIC_URL + '/img/techtonica_logo.png'} alt="techtonica logo" className="nav-logo"/>
+          <a href="/">
+            <img src={process.env.PUBLIC_URL + '/img/techtonica_logo.png'} alt="techtonica logo" className="nav-logo"/>
+          </a>
         </div>
         <div className="nav-right">
           <button className="nav-button">
