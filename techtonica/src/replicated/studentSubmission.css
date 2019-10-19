@@ -1,5 +1,46 @@
+.submission-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .submission-title {
+  text-align: center;
   color: black;
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.url {
+  display: flex;
+  width: 80vw;
+}
+
+.healpful {
+  display: flex;
+  width: 80vw;
+}
+
+.time {
+  display: flex;
+  width: 80vw;
+}
+
+.difficulty {
+  display: flex;
+  width: 80vw;
+}
+
+.feedback {
+  display: flex;
+  width: 80vw;
 }
 
 p {
