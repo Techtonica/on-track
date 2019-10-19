@@ -1,5 +1,5 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './studentSubmission.css';
 
 const StudentSubmission = () => {
@@ -11,4 +11,4 @@ const StudentSubmission = () => {
   )
 }
 
-export default StudentSubmission;
+export default withRouter(StudentSubmission);

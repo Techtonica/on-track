@@ -1,10 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Home from '../layout/home'
 import StudentSubmission from '../replicated/studentSubmission'
 
 const Routes = () => (
   <Switch>
-    {/* <Route exact path='/' render={ () => <Home />} /> */}
+    <Route exact path='/' render={ () => <Home />} />
     <Route exact path='/studentSubmission/:topic' render={ () => <StudentSubmission />} />
     {/* <Route exact path='/teacher' render={ () => <Teacher />} /> */}
   </Switch>
