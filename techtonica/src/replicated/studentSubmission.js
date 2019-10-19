@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './studentSubmission.css';
 
@@ -25,7 +25,7 @@ const StudentSubmission = (props) => {
 
   return(
     <div className="submission-body">
-      <form className="student_form" onSubmit={handleSubmit}>
+      <form className="student-form" onSubmit={handleSubmit}>
         <input type="hidden" name="email" value={email} ></input>
 
         <h1>Topic: {topic} </h1>

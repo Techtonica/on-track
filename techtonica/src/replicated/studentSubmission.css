@@ -6,3 +6,9 @@ p {
   color: white;
   font-size: 5em;
 }
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: 
+}
