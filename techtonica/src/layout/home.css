@@ -1,4 +1,9 @@
+.home-body {
+  height: 70vh;
+}
+
 h1 {
-  color: white;
+  text-align: center;
+  color: black;
   font-size: 5em;
 }

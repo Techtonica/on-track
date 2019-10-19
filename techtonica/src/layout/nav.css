@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh 5vw;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 10vh;
+  width: auto;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+}

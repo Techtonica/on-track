@@ -1,8 +1,8 @@
-body {
+.submission-body {
   background: white;
 }
 
 p {
-  color: white;
+  color: black;
   font-size: 5em;
 }
