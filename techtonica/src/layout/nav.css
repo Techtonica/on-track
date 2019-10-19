@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh 5vw;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 10vh;
+  width: auto;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  height: 5vh;
+  width: 10vw;
+  background-color: white;
+  border-radius: 5px;
+} 

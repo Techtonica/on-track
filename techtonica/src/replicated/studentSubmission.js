@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './studentSubmission.css';
 
@@ -28,7 +28,7 @@ const StudentSubmission = (props) => {
       <form className="student_form" onSubmit={handleSubmit}>
         <input type="hidden" name="email" value={email} ></input>
 
-        <h1>Topic: {topic} </h1>
+        <h1 className="submission-title">Topic: {topic} </h1>
 
         <label>Github Link: 
           <input id="url" type="url" name="url" value={url} 
