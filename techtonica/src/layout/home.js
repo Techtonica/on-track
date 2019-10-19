@@ -6,7 +6,9 @@ const Home = () => {
 
   return(
     <>
-      <h1>Techtonica Home Page</h1>
+      <div className="home-body">
+        <h1>Techtonica Portal</h1>
+      </div>
     </>
   )
 }

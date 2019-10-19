@@ -1,9 +1,9 @@
-body {
-  background: white;
+.submission-title {
+  color: black;
 }
 
 p {
-  color: white;
+  color: black;
   font-size: 5em;
 }
 

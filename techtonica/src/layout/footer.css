@@ -1,0 +1,9 @@
+footer {
+  color: black;
+  text-align: center;
+}
+
+.footer-links {
+  text-decoration: none;
+  font-size: 2em;
+}
