@@ -7,7 +7,7 @@ const Home = () => {
   return(
     <>
       <div className="home-body">
-        <h1>Techtonica Home Page</h1>
+        <h1>Techtonica Portal</h1>
       </div>
     </>
   )

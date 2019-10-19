@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './nav.css';
+import AuthModal from './authModal';
 
 const Nav = () => {
 
@@ -16,6 +17,7 @@ const Nav = () => {
           <button className="nav-button">
             <a href="/studentSubmission/:topic">Login</a>
           </button>
+          <AuthModal />
         </div>
       </nav>
     </>

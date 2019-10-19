@@ -19,11 +19,5 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.nav-button {
   height: 5vh;
-  width: 10vw;
-  background-color: white;
-  border-radius: 5px;
 }
