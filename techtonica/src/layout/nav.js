@@ -14,10 +14,7 @@ const Nav = () => {
           </a>
         </div>
         <div className="nav-right">
-          <button className="nav-button">
-            <a href="/studentSubmission/:topic">Login</a>
-          </button>
-          <AuthModal />
+          <a href="/studentSubmission/:topic">Login</a>
         </div>
       </nav>
     </>
