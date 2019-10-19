@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './studentSubmission.css';
 
 const StudentSubmission = (props) => {
