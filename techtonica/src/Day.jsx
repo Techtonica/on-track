@@ -12,10 +12,10 @@ class Day extends React.Component {
       const { dayData } = this.props;
 
       let parsedDayData = (dayData || []).map((activity) => 
-      <div>
+      <div className="aa">
       { activity['Topic (Estimated Time)'] ? 
-        (<div>
-            <hr/>
+        (<div><hr/>
+            <div className="activity-row">
             <span className="activity-item">{activity['Topic (Estimated Time)']}</span>
             <span className="activity-item">{ activity['Estimated time (hours)'] ? activity['Estimated time (hours)'] + ' hours' : ''} </span>
             <span className="activity-item">{ activity['Topic Outline'] ? <a href={activity['Topic Outline']}><FontAwesomeIcon icon={faFileAlt} /></a> : null}</span>
@@ -23,12 +23,12 @@ class Day extends React.Component {
             <span className="activity-item">{ activity['Video'] ? <a href={activity['Video']}><FontAwesomeIcon icon={faVideo} /></a> : null}</span>
             <span className="activity-item">{ activity['Assessment'] ? "Assessment " + activity['Assessment'] : ""} </span>
             <span className="activity-item">{ loggedIn && !completed ? <a href="/studentSubmission/:topic"><button className='submit'>Submit</button></a> : null}</span>
-            </div>)
+            </div></div>)
         : null }
     </div>)
       
         return(
-        <div style={{borderStyle: 'solid'}}> 
+        <div> 
             <h2> { dayData[0]['Day'] ? "Day " + dayData[0]['Day'] : "Homework" }</h2>
             {parsedDayData}
         </div>)

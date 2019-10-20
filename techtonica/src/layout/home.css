@@ -12,8 +12,17 @@ h1 {
 .activity-item {
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 4px;
+  margin-bottom: 4px;
   
+}
+
+.activity-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aa:nth-child(even) {
+  background-color: #DFDFDF;
 }
 
 .submit {
@@ -24,8 +33,6 @@ h1 {
   padding-right: 16px;
   padding-top: 4px;
   padding-bottom: 4px;
-  display: inline;
-  align-content: right;
   text-decoration: none;
 }
 
