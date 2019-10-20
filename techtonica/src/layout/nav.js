@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './nav.css';
-import AuthModal from './authModal';
 
 const Nav = () => {
-  const email = localStorage.email;
-  const [ loggedIn, setLoggedIn, toggle, setToggle ] = useState(!!email.length);
+  const [ loggedIn, setLoggedIn ] = useState(!!localStorage.email.length);
   const [ modalData, setModalData ] = useState({
-    hidden: false,
+    hidden: true,
     email: ""
   });
 
+  const { email, hidden } = modalData;
+
   const logout = () => {
     localStorage.email = "";
-    setLoggedIn({ loggedIn: false })
+    setLoggedIn({ loggedIn: false });
   }
 
   const showLogout = () => (
     <>
-      <span>You're currently logged in under {email}.</span>
+      <span>You're currently logged in under {localStorage.email}.</span>
       <span className="session-btn" onClick={logout}>Log Out</span>
     </>
   )
 
   const showLogin = () => (
-    <span className="session-btn" onClick={() => setToggle(!toggle)}>Login</span>
+    <span className="session-btn" 
+      onClick={() => setModalData({ hidden: false })}>Login</span>
   )
 
   const showModal = () => (
@@ -46,18 +47,34 @@ const Nav = () => {
   )
 
   const handleChange = (e) => {
-    setModalData({ ...modalData, email: e.target.value });
+    setModalData({ email: e.target.value });
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.email = email;
-    setModalData({ ...modalData, hidden: true });
+    setModalData({ hidden: true });
+    setLoggedIn({ loggedIn: true });
+    
+    // let Airtable = require('airtable');
+    // let base = new Airtable({ apiKey: 'key0ElcLHXJqeZtUy' }).base('appx5F93ksl9EZtQt');
+
+    // base("Login Emails").select({
+    //   filterByFormula: "({Email} = '{email}')"
+    // }).eachPage(function page(records, fetchNextPage) {
+    //   if (records.length == 0) {
+    //     console.log("Check Input");
+    //   } else {
+    //     console.log(200);
+    //   }
+    //   fetchNextPage();
+    // });
   }
 
   return(
     <nav>
 
+      {email}
       <div className="nav-left">
         <a href="/">
           <img src={process.env.PUBLIC_URL + '/img/techtonica_logo.png'} alt="techtonica logo" className="nav-logo"/>
@@ -68,7 +85,7 @@ const Nav = () => {
         { loggedIn ? showLogout() : showLogin() }
       </div>
 
-      { toggle ? <></> : showModal() }
+      { hidden ? <></> : showModal() }
 
     </nav>
   )
