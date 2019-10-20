@@ -1,8 +1,52 @@
 .home-body {
   height: 70vh;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 h1 {
   color: black;
   font-size: 5em;
 }
+
+.activity-item {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 4px;
+  
+}
+
+.activity-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aa:nth-child(even) {
+  background-color: #DFDFDF;
+}
+
+.submit {
+  background-color: #16A7C8;
+  color: white;
+  cursor: pointer;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+

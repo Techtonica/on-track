@@ -12,7 +12,6 @@ const StudentSubmission = (props) => {
     difficulty: null,
     feedback: ''
   });
-
   const { email, topic, url, feedback } = userData;
 
   const handleChange = (e) => {
@@ -23,20 +22,20 @@ const StudentSubmission = (props) => {
     e.preventDefault();
     console.dir(userData);
     let Airtable = require('airtable');
-    let base = new Airtable({ apiKey: 'key0ElcLHXJqeZtUy' }).base('appx5F93ksl9EZtQt');
+
+    let base = new Airtable({apiKey: 'key0ElcLHXJqeZtUy'}).base('appx5F93ksl9EZtQt');
     base('Teacher Log').create([
       {
-        "fields": {
-          "Email": userData.email,
-          "Topic": props.match.params.topic,
-          "URL": userData.url,
-          "Helpful": userData.helpful,
-          "Time": userData.time,
-          "Difficulty": userData.difficulty,
-          "Feedback": userData.feedback
-        }
+        "fields": {"Email": userData.email, 
+                  "Topic": props.match.params.topic, 
+                  "URL": userData.url, 
+                  "Helpful": userData.helpful,
+                  "Time": userData.time,
+                  "Difficulty": userData.difficulty,
+                  "Feedback": userData.feedback}
       }
-    ], function (err, records) {
+    ], function(err, records) {
+
       if (err) {
         console.error(err);
         return;
@@ -54,50 +53,51 @@ const StudentSubmission = (props) => {
         <h1 className="submission-title">Topic: {topic} </h1>
         <div className="url">
           <h3>Github Link: </h3>
-          <input className="url-input" id="url" type="url" name="url" value={url} onChange={handleChange} />
+
+            <input className="url-input" id="url" type="url" name="url" value={url} onChange={handleChange} />
         </div>
         <div className="helpful">
-          <h3>How helpful was this topic/assignment?</h3>
+          <h3>How helpful was this topic/assignment?</h3>  
           <div>
             <label>Not at All</label>
-            <input type="radio" name="helpful" value="1" onChange={handleChange} />
-            <label>Somewhat</label>
-            <input type="radio" name="helpful" value="2" onChange={handleChange} />
-            <label>Very</label>
-            <input type="radio" name="helpful" value="3" onChange={handleChange} />
-            <label>Amazingly</label>
-            <input type="radio" name="helpful" value="4" onChange={handleChange} />
+              <input type="radio" name="helpful" value="1" onChange={handleChange} />
+            <label>Somewhat</label>  
+              <input type="radio" name="helpful" value="2" onChange={handleChange} />
+            <label>Very</label>  
+              <input type="radio" name="helpful" value="3" onChange={handleChange} />
+            <label>Amazingly</label>  
+              <input type="radio" name="helpful" value="4" onChange={handleChange} />
           </div>
         </div>
         <div className="time">
           <h3>How long did it take?</h3>
           <div>
-            <label>less than 1 hour</label>
-            <input type="radio" name="time" value="1" onChange={handleChange} />
-            <label>~1 hour</label>
-            <input type="radio" name="time" value="2" onChange={handleChange} />
-            <label>~2 hours</label>
-            <input type="radio" name="time" value="3" onChange={handleChange} />
-            <label>more than 2 hours</label>
-            <input type="radio" name="time" value="4" onChange={handleChange} />
+            <label>less than 1 hour</label>  
+              <input type="radio" name="time" value="1" onChange={handleChange} />
+            <label>~1 hour</label>  
+              <input type="radio" name="time" value="2" onChange={handleChange} />
+            <label>~2 hours</label>  
+              <input type="radio" name="time" value="3" onChange={handleChange} />
+            <label>more than 2 hours</label>  
+              <input type="radio" name="time" value="4" onChange={handleChange} />
           </div>
         </div>
         <div className="difficulty">
           <h3>How difficult was it?</h3>
           <div>
-            <label>Easy Breezy</label>
-            <input type="radio" name="difficulty" value="1" onChange={handleChange} />
-            <label>Alright</label>
-            <input type="radio" name="difficulty" value="2" onChange={handleChange} />
-            <label>A Bit Challenging</label>
-            <input type="radio" name="difficulty" value="3" onChange={handleChange} />
-            <label>Challenging</label>
-            <input type="radio" name="difficulty" value="4" onChange={handleChange} />
+            <label>Easy Breezy</label>  
+              <input type="radio" name="difficulty" value="1" onChange={handleChange} />
+            <label>Alright</label>  
+              <input type="radio" name="difficulty" value="2" onChange={handleChange} />
+            <label>A Bit Challenging</label>  
+              <input type="radio" name="difficulty" value="3" onChange={handleChange} />
+            <label>Challenging</label>  
+              <input type="radio" name="difficulty" value="4" onChange={handleChange} />
           </div>
         </div>
         <div className="feedback">
-          <h3>Feedback</h3>
-          <input className="feedback-input" id="feedback" type="text" name="feedback" value={feedback} onChange={handleChange} />
+          <h3>Feedback</h3>  
+            <input className="feedback-input" id="feedback" type="text" name="feedback" value={feedback} onChange={handleChange} />
         </div>
         <input className="button-input" type="submit" value="submit" />
       </form>
