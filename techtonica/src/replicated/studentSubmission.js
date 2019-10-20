@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import './studentSubmission.css';
 
 const StudentSubmission = (props) => {
-  const [ userData, setUserData ] = useState({
+  const [userData, setUserData] = useState({
     email: localStorage.email,
     topic: props.match.params.topic,
     url: '',
@@ -12,17 +12,17 @@ const StudentSubmission = (props) => {
     difficulty: null,
     feedback: ''
   });
-  
   const { email, topic, url, feedback } = userData;
 
   const handleChange = (e) => {
-    setUserData({...userData, [e.target.name]: e.target.value });
+    setUserData({ ...userData, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
     console.dir(userData);
     let Airtable = require('airtable');
+
     let base = new Airtable({apiKey: 'key0ElcLHXJqeZtUy'}).base('appx5F93ksl9EZtQt');
     base('Teacher Log').create([
       {
@@ -35,6 +35,7 @@ const StudentSubmission = (props) => {
                   "Feedback": userData.feedback}
       }
     ], function(err, records) {
+
       if (err) {
         console.error(err);
         return;
@@ -45,13 +46,14 @@ const StudentSubmission = (props) => {
     });
   }
 
-  return(
+  return (
     <div className="submission-body">
       <form className="student-form" onSubmit={handleSubmit}>
         <input type="hidden" name="email" value={email} ></input>
         <h1 className="submission-title">Topic: {topic} </h1>
         <div className="url">
           <h3>Github Link: </h3>
+
             <input className="url-input" id="url" type="url" name="url" value={url} onChange={handleChange} />
         </div>
         <div className="helpful">
