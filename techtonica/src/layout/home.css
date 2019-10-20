@@ -21,6 +21,20 @@ h1 {
   justify-content: space-between;
 }
 
+.activity-name {
+  width: 300px;
+ }
+ .activity-time {
+  width: 100px;
+ }
+ .full-row:nth-child(odd) {
+  background-color: #DFDFDF;
+ }
+ 
+ hr {
+  margin: 0;
+ }
+
 .aa:nth-child(even) {
   background-color: #DFDFDF;
 }
