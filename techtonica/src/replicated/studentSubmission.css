@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 80vh;
 }
 
 .submission-title {
@@ -67,4 +68,5 @@ label {
   margin: 2vh;
   height: 5vh;
   width: 10vw;
+  font-size: 2em;
 }
