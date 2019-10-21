@@ -52,7 +52,7 @@ const StudentSubmission = (props) => {
         <input type="hidden" name="email" value={email} ></input>
         <h1 className="submission-title">Topic: {topic} </h1>
         <div className="url">
-          <h3>Github Link: </h3>
+          <h3>GitHub Link: </h3>
 
             <input className="url-input" id="url" type="url" name="url" value={url} onChange={handleChange} />
         </div>
